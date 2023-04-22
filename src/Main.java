@@ -1,9 +1,11 @@
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
+        HashMap<String,String> hashMap = new HashMap<>();
         List<User> users = List.of(
                 new User(1,"user1",24,"user1@mail.ru"),
                 new User(2, "usr2", 25, "user2@gmail.com"),
@@ -43,7 +45,10 @@ public class Main {
         }
         System.out.println(sum);
 
-
+        for (UserDto user: userDtos) {
+            hashMap.put(user.getLogin(), user.getEmail());
+        }
+        System.out.println(hashMap);
     }
 
 }
